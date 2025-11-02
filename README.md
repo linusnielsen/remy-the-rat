@@ -4,3 +4,5 @@ My goal was to make Remy's arms move in sync with mine, giving the impression th
 
 I took the Blender file from the Hackaday project and exported the complete rat to FreeCAD, and carved out a profile that fit the sub-micro servos.
 I then stole the Mahony filter function from https://github.com/jremington/MPU-6050-Fusion to get a completely stable yaw/pitch/roll from the MPU6050.
+
+![Picture of Remy the rat in my wife's hair.](media/Remy.jpg)
