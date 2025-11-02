@@ -6,6 +6,8 @@
 #include <Wire.h>
 #include <stdint.h>
 
+//#define DEBUG
+
 #define SERVO_RANGE 120
 #define SERVO_BASE 70
 
@@ -106,6 +108,7 @@ class mpu {
         for (char k = 0; k < 3; k++)
           G_off[k] = ((float) gsum[k]) / 500.0;
 
+#ifdef DEBUG
         Serial.print("G_Off: ");
         Serial.print(G_off[0]);
         Serial.print(", ");
@@ -113,6 +116,7 @@ class mpu {
         Serial.print(", ");
         Serial.print(G_off[2]);
         Serial.println();
+#endif
       }
     }
 
@@ -167,6 +171,7 @@ class mpu {
       pitch *= 180.0 / PI;
       roll *= 180.0 / PI;
 
+#ifdef DEBUG
       now_ms = millis(); //time to print?
       if (now_ms - last_ms >= print_ms) {
         last_ms = now_ms;
@@ -179,6 +184,7 @@ class mpu {
         Serial.print(", ");
         Serial.println(roll, 0);
       }
+#endif
     }
   }
 
